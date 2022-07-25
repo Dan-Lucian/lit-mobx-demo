@@ -1,16 +1,18 @@
-import { observable, action } from 'mobx';
+import {  makeAutoObservable } from 'mobx';
 
 // import { User } from './interfaces/User.js';
 // import { usersFromServer } from './users.js';
 
 class Store {
-  @observable
   public count = 0;
 
-  @action
   public increment() {
     this.count += 1;
     console.log('count: ', this.count);
+  }
+
+  constructor() {
+    makeAutoObservable(this);
   }
 
   // constructor() {
