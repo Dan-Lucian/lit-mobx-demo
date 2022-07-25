@@ -1,13 +1,13 @@
 /* eslint-disable class-methods-use-this */
-import { html, css, LitElement } from 'lit';
+import { html, css } from 'lit';
 import { customElement } from 'lit/decorators.js';
-// import { MobxLitElement } from '@adobe/lit-mobx';
-// import { store } from '../store.js';
+import { MobxLitElement } from '@adobe/lit-mobx';
+import { store } from '../store.js';
 
 import { FormUser } from '../interfaces/FormUser.js';
 
 @customElement('app-box')
-export class AppBox extends LitElement {
+export class AppBox extends MobxLitElement {
   render() {
     const { _handleSubmit } = this;
 
@@ -21,9 +21,14 @@ export class AppBox extends LitElement {
           <input type="text" name="age" id="age" />
 
           <button type="submit">Submit</button>
+          <button type="button" @click=${this._increment}>Increment</button>
         </form>
       </div>
     `;
+  }
+
+  private _increment() {
+    store.increment();
   }
 
   private _handleSubmit(event: Event) {

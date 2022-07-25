@@ -10,6 +10,7 @@ class Store {
   @action
   public increment() {
     this.count += 1;
+    console.log('count: ', this.count);
   }
 
   // constructor() {
