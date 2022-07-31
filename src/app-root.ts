@@ -1,30 +1,27 @@
-/* eslint-disable wc/guard-super-call */
-import { html, css } from 'lit';
-import { MobxLitElement } from '@adobe/lit-mobx';
+import { LitElement, html, css, TemplateResult, CSSResult } from 'lit';
 import { customElement } from 'lit/decorators.js';
 
-import { store } from './store.js';
+import { EnumRoleUser } from './enums/EnumRoleUser.js';
+import routes from './config/routes.js';
 
-import './components/app-header.js';
-import './components/app-box.js';
-import './components/app-menu.js';
-
+// roleUser has to be taken from a global store and plugged into the router
+// here it is hard coded as EnumRoleUser.Employee
 @customElement('app-root')
-export class AppRoot extends MobxLitElement {
-  render() {
+export class AppRoot extends LitElement {
+  protected render(): TemplateResult<1> {
     return html`
-      <main>
-        <app-header></app-header>
-        <app-box></app-box>
-        <app-menu></app-menu>
-      </main>
+      <div id="app-root">
+        <router-app
+          .routes=${routes}
+          roleUser=${EnumRoleUser.Employee}
+        ></router-app>
+      </div>
     `;
   }
 
-  connectedCallback(): void {
-    super.connectedCallback();
-    console.log('store: ', store);
-  }
-
-  static styles = css``;
+  static styles: CSSResult = css`
+    :host {
+      display: flex;
+    }
+  `;
 }
