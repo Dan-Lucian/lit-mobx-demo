@@ -9,13 +9,6 @@ export class PageLogin extends LitElement {
     return html`
       <main>
         <h1>Page login</h1>
-
-        <ul>
-          <li><link-router route="/" text="page index"></link-router></li>
-          <li><link-router route="/login" text="page login"></link-router></li>
-          <li><link-router route="/about" text="page about"></link-router></li>
-          <li><link-router route="/not-existent" text="404"></link-router></li>
-        </ul>
       </main>
     `;
   }
