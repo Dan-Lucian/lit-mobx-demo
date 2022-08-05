@@ -5,19 +5,23 @@ import { classMap, ClassInfo } from 'lit/directives/class-map.js';
 
 @customElement('link-router')
 export default class LinkRouter extends LitElement {
-  @property({ type: String }) public route: string = '/';
+  @property({ type: String })
+  public route: string = '/';
 
-  @property({ type: String }) public text: string = '';
+  @property({ type: Object })
+  public classes: ClassInfo = {};
 
-  @property({ type: Object }) public classes: ClassInfo = {};
+  @property({ type: Object })
+  public content: TemplateResult<1> = html``;
 
   protected render(): TemplateResult<1> {
     return html`<a
       href="#"
       class=${classMap(this.classes)}
       @click=${this.onClick}
-      >${this.text}</a
-    >`;
+    >
+      ${this.content}
+    </a>`;
   }
 
   private onClick(event: Event): void {
