@@ -1,0 +1,55 @@
+body {
+  --color-white: #fff;
+  --color-green: #28b485;
+  --color-green-dark: #186c50;
+  --color-red: #dc143c;
+  --color-red-dark: #840c24;
+  --color-yellow: #ffd23f;
+  --color-bg-game: #0061cb;
+}
+
+[data-theme='light'] {
+  --color-bg-primary: #edebe9;
+  --color-bg-secondary: #ffffff;
+  --color-bg-reverse-primary-secondary: #edebe9;
+  --color-bg-reverse-secondary-primary: #ffffff;
+  --color-bg-ternary: #1f2a48;
+  --color-text: #6c6c6c;
+  --color-shadow-box: rgba(0, 0, 0, 0.2);
+  --color-blue: #3394fe;
+  --color-blue-dark: #0061cb;
+  --color-shadow: rgba(0, 0, 0, 0.2);
+
+  /* generated from --color-text on https://codepen.io/sosuke/pen/Pjoqqp
+  accuracy < 0.0
+  brightness(0) saturate(100%) prepended to convert icon to black */
+  --color-icon: brightness(0) saturate(100%) invert(45%) sepia(0%) saturate(0%)
+    hue-rotate(227deg) brightness(93%) contrast(95%);
+
+  --opacity-text: 0.8;
+}
+
+[data-theme='dark'] {
+  --color-bg-primary: #141c2f;
+  --color-bg-secondary: #1f2a48;
+  --color-bg-reverse-primary-secondary: #1f2a48;
+  --color-bg-reverse-secondary-primary: #141c2f;
+  --color-bg-ternary: #1f2a48;
+  --color-text: #ffffff;
+  --color-shadow-box: rgba(255, 255, 255, 0.2);
+  --color-blue: #0079fe;
+  --color-blue-dark: #004998;
+  --color-shadow: rgba(0, 0, 0, 0.2);
+  --color-icon: initial;
+
+  --opacity-text: 0.4;
+}
+
+/* scrollbar color */
+[data-color-scheme='light'] {
+  color-scheme: light;
+}
+
+[data-color-scheme='dark'] {
+  color-scheme: dark;
+}

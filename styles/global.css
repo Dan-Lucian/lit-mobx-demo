@@ -1,0 +1,33 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+img {
+  max-height: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  color: inherit;
+  font-size: 100%;
+}
+
+body {
+  font-family: Roboto, verdana, sans-serif;
+  background: var(--color-bg-primary);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
