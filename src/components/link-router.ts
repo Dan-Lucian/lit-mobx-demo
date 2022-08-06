@@ -1,26 +1,26 @@
-import { LitElement, html, TemplateResult } from 'lit';
+import { LitElement, html, TemplateResult, CSSResult } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
 import { property } from 'lit/decorators/property.js';
-import { classMap, ClassInfo } from 'lit/directives/class-map.js';
 
 @customElement('link-router')
 export default class LinkRouter extends LitElement {
   @property({ type: String })
-  public route: string = '/';
+  public to: string = '/';
 
   @property({ type: Object })
-  public classes: ClassInfo = {};
-
-  @property({ type: Object })
-  public content: TemplateResult<1> = html``;
+  public styles?: CSSResult;
 
   protected render(): TemplateResult<1> {
-    return html`<a
-      href="#"
-      class=${classMap(this.classes)}
+    return html`
+    <style>
+      ${this.styles}
+    </style>
+
+    <a
+      href=${this.to}
       @click=${this.onClick}
     >
-      ${this.content}
+      <slot></slot>
     </a>`;
   }
 
@@ -29,8 +29,8 @@ export default class LinkRouter extends LitElement {
 
     window.history.pushState(
       {},
-      this.route,
-      window.location.origin + this.route
+      this.to,
+      window.location.origin + this.to
     );
 
     // "popstate" doesn't fire on window.history.pushState()
@@ -38,11 +38,5 @@ export default class LinkRouter extends LitElement {
     // didn't create a custom event for routing in order to keep the
     // back navigation browser functionality
     window.dispatchEvent(new Event('popstate'));
-  }
-
-  // do not attach a shadow for styling purposes
-  // in order to allow styling by the parent using a classes prop
-  protected createRenderRoot() {
-    return this;
   }
 }

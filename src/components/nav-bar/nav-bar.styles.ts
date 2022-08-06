@@ -8,16 +8,18 @@ const stylesNavBar = css`
     padding: 1em;
     background: var(--color-bg-secondary);
   }
-
-  .link {
-    text-decoration: none;
-    padding: 1em;
-    color: var(--color-text);
-  }
-
-  .link:hover {
-    color: var(--color-blue);
-  }
 `;
 
-export { stylesNavBar };
+const stylesLink = css`
+  a {
+    text-decoration: none;
+    padding: 1em;
+    color: var(--color-blue);
+  }
+  
+  a:hover {
+    color: var(--color-text);
+  }
+`
+
+export { stylesNavBar, stylesLink };
