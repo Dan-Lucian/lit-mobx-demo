@@ -1,7 +1,7 @@
 import { html, LitElement, TemplateResult } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
 
-import '../components/link-router.js';
+import '../../components/link-router.js';
 
 @customElement('page-mobx')
 export class PageMobx extends LitElement {

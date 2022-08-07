@@ -1,9 +1,9 @@
 import { CSSResult, html, css, LitElement, TemplateResult } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
 
-import routerService from '../services/router.service.js';
-import '../components/link-router.js';
-import '../components/nav-bar/nav-bar.component.js';
+import routerService from '../../services/router.service.js';
+import '../../components/link-router.js';
+import '../../components/nav-bar/nav-bar.component.js';
 
 @customElement('page-index')
 export class PageIndex extends LitElement {

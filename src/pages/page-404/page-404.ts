@@ -1,8 +1,8 @@
 import { html, LitElement, TemplateResult } from 'lit';
 import { customElement } from 'lit/decorators/custom-element.js';
 
-import '../components/link-router.js';
-import '../components/nav-bar/nav-bar.component.js'
+import '../../components/link-router.js';
+import '../../components/nav-bar/nav-bar.component.js'
 
 @customElement('page-404')
 export class Page404 extends LitElement {
