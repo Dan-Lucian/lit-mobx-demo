@@ -1,5 +1,5 @@
 import { LitElement, html, TemplateResult } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { customElement } from 'lit/decorators/custom-element.js';
 
 import { EnumRoleUser } from './enums/EnumRoleUser.js';
 import routes from './config/routes.js';
@@ -15,7 +15,7 @@ export class AppRoot extends LitElement {
         <nav-bar></nav-bar>
         <router-app
           .routes=${routes}
-          roleUser=${EnumRoleUser.Employee}
+          roleUser=${EnumRoleUser.Stranger}
         ></router-app>
       </div>
     `;
