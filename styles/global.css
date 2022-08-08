@@ -24,6 +24,7 @@ textarea {
 body {
   font-family: Roboto, verdana, sans-serif;
   background: var(--color-bg-primary);
+  color: var(--color-text);
 }
 
 html,

@@ -15,7 +15,7 @@ export class AppRoot extends LitElement {
         <nav-bar></nav-bar>
         <router-app
           .routes=${routes}
-          roleUser=${EnumRoleUser.Stranger}
+          roleUser=${EnumRoleUser.Manager}
         ></router-app>
       </div>
     `;
